@@ -1,8 +1,12 @@
 {
-  "type": "mongodb",
-  "database": "test",
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "",
+  "password": "",
+  "database": "",
   "synchronize": true,
-  "logging": false,
+  "logging": true,
   "entities": [
     "src/entity/**/*.ts"
   ],

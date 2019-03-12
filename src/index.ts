@@ -1,22 +1,21 @@
-// import "reflect-metadata";
-// import { createConnection } from 'typeorm'
-import * as Koa from 'koa'
-import * as Router from 'koa-router'
-import * as cors from '@koa/cors'
-import * as json from 'koa-json'
-import * as koaBody from 'koa-body'
-import './init'
+import 'reflect-metadata'
+import * as helmet from 'koa-helmet'
+import { Container } from 'typedi'
+import { useContainer as ormUseContainer } from 'typeorm'
+import { createKoaServer, useContainer as routingUseContainer } from 'routing-controllers'
 
-const app = new Koa()
-const router = new Router()
+import { PORT } from '@/config'
 
-//router.post('/api/search', search)
+routingUseContainer(Container)
+ormUseContainer(Container)
 
-app.use(koaBody())
-app.use(json())
-app.use(cors())
-app.use(router.routes())
+const app = createKoaServer({
+  cors: true,
+  routePrefix: '/api',
+  controllers: [__dirname + '/controller/*.ts'],
+})
 
-app.listen(process.env.PORT)
+app.use(helmet())
+app.listen(PORT)
 
-// const connection = await createConnection()
+console.log(`Server running on port ${PORT}`)
