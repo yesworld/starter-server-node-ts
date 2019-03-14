@@ -1,6 +1,6 @@
 {
   "name": "start-point",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "REST API using Node with typescript, KOA framework. TypeORM for SQL. Middleware JWT, CORS, Winston Logger.",
   "main": "index.ts",
   "scripts": {
@@ -11,7 +11,6 @@
     "sync": "ts-node ./node_modules/.bin/typeorm schema:sync"
   },
   "dependencies": {
-    "@koa/cors": "^3.0.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.4",
     "class-validator": "^0.9.1",

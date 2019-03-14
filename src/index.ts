@@ -4,12 +4,13 @@ import { Container } from 'typedi'
 import { useContainer as ormUseContainer } from 'typeorm'
 import { createKoaServer, useContainer as routingUseContainer } from 'routing-controllers'
 
-import { PORT } from '@/config'
+import IS_DEV, { PORT } from '@/config'
 
 routingUseContainer(Container)
 ormUseContainer(Container)
 
 const app = createKoaServer({
+  development: IS_DEV,
   cors: true,
   routePrefix: '/api',
   controllers: [__dirname + '/controller/*.ts'],
