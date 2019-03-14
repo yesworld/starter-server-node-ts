@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
-import { IsEmail, IsNotEmpty, Matches } from 'class-validator'
-import { IsUserAlreadyExist } from '../validate/IsUserAlreadyExist'
+import { IsEmail, IsNotEmpty, Matches } from 'routing-controllers/node_modules/class-validator'
+import { IsUserAlreadyExist } from '@/validate/IsUserAlreadyExist'
 
 @Entity()
 export class User {
@@ -57,7 +57,7 @@ export class User {
 
   @Column({
     name: 'date_create',
-    default: () => 'NOW()'
+    default: () => 'NOW()', // tslint:disable-line
   })
   public dateCreate: Date
 }

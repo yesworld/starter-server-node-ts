@@ -10,13 +10,13 @@ routingUseContainer(Container)
 ormUseContainer(Container)
 
 const app = createKoaServer({
-  development: IS_DEV,
   cors: true,
   routePrefix: '/api',
+  development: IS_DEV,
   controllers: [__dirname + '/controller/*.ts'],
 })
 
 app.use(helmet())
 app.listen(PORT)
 
-console.log(`Server running on port ${PORT}`)
+console.log(`Server running on port ${PORT}`) // tslint:disable-line

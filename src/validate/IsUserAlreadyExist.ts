@@ -1,6 +1,6 @@
-import { registerDecorator, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator'
+import { registerDecorator, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator' // tslint:disable-line
 import { getManager, Repository } from 'typeorm'
-import { User } from '../entity/user'
+import { User } from '@/entity/User'
 
 interface IOption {
   email?: string,
@@ -25,7 +25,7 @@ export class IsUserAlreadyExistConstraint implements ValidatorConstraintInterfac
 }
 
 export function IsUserAlreadyExist(validationOptions?: ValidationOptions): any {
-  return function(object: Object, propertyName: string): void {
+  return (object: object, propertyName: string): void => {
     registerDecorator({
       target: object.constructor,
       propertyName,

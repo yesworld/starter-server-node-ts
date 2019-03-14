@@ -1,6 +1,6 @@
 {
   "name": "start-point",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "REST API using Node with typescript, KOA framework. TypeORM for SQL. Middleware JWT, CORS, Winston Logger.",
   "main": "index.ts",
   "scripts": {
@@ -11,10 +11,8 @@
     "sync": "ts-node ./node_modules/.bin/typeorm schema:sync"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "bcrypt": "^3.0.4",
-    "class-validator": "^0.9.1",
-    "dotenv": "^6.2.0",
+    "dotenv": "^7.0.0",
     "kcors": "^2.2.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
@@ -22,21 +20,51 @@
     "koa-router": "^7.4.0",
     "mysql": "^2.14.1",
     "reflect-metadata": "^0.1.10",
-    "routing-controllers": "^0.7.7",
     "typedi": "^0.8.0",
-    "typeorm": "0.2.14"
+    "typeorm": "0.2.15",
+    "class-validator": "^0.9.1",
+    "routing-controllers": "^0.7.7"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
     "@types/koa-bodyparser": "^4.2.2",
     "@types/koa-router": "^7.0.40",
-    "@types/node": "^11.11.1",
+    "@types/node": "^11.11.3",
     "nodemon": "^1.18.10",
     "ts-node": "8.0.3",
     "tsconfig-paths": "^3.8.0",
-    "tslint": "^5.13.1",
+    "tslint": "^5.14.0",
     "tslint-consistent-codestyle": "^1.15.1",
     "typescript": "^3.3.3333"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "koa",
+    "koa2",
+    "jwt",
+    "winston",
+    "rest",
+    "starter",
+    "typeORM",
+    "class-validator",
+    "routing-controllers",
+    "helmet",
+    "sql",
+    "api",
+    "DI",
+    "typedi",
+    "cors"
+  ],
+  "author": {
+    "name": "yesworld",
+    "email": "a.yesworld@gmail.com",
+    "url": "https://github.com/yesworld"
+  },
+  "contributors": [
+    {
+      "name": "xorik",
+      "url": "https://github.com/xorik"
+    }
+  ]
 }

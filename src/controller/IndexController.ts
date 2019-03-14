@@ -9,7 +9,7 @@ export class IndexController {
   }
 
   @Get('/error')
-  errors(): any {
+  public errors(): any {
     throw new NotFoundError('Page not found')
   }
 
