@@ -1,11 +1,12 @@
 import 'reflect-metadata'
 import * as helmet from 'koa-helmet'
 import { Container } from 'typedi'
-import { useContainer as ormUseContainer } from 'typeorm'
+import { createConnection, useContainer as ormUseContainer } from 'typeorm'
 import { createKoaServer, useContainer as routingUseContainer } from 'routing-controllers'
 
 import IS_DEV, { PORT } from '@/config'
 
+createConnection()
 routingUseContainer(Container)
 ormUseContainer(Container)
 

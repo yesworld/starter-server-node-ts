@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.4",
+    "class-validator": "^0.8.1",
     "dotenv": "^7.0.0",
+    "jsonwebtoken": "^8.5.1",
     "kcors": "^2.2.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
@@ -20,10 +22,9 @@
     "koa-router": "^7.4.0",
     "mysql": "^2.14.1",
     "reflect-metadata": "^0.1.10",
+    "routing-controllers": "^0.7.7",
     "typedi": "^0.8.0",
-    "typeorm": "0.2.15",
-    "class-validator": "^0.9.1",
-    "routing-controllers": "^0.7.7"
+    "typeorm": "0.2.15"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",

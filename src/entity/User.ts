@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
-import { IsEmail, IsNotEmpty, Matches } from 'routing-controllers/node_modules/class-validator'
+import { Entity, Column, PrimaryGeneratedColumn, AfterInsert } from 'typeorm'
+import { IsEmail, IsNotEmpty, Matches } from 'class-validator'
 import { IsUserAlreadyExist } from '@/validate/IsUserAlreadyExist'
 
 @Entity()
@@ -32,6 +32,7 @@ export class User {
   })
   public email: string
 
+  @IsNotEmpty()
   @Column({
     length: 80,
   })
@@ -60,4 +61,9 @@ export class User {
     default: () => 'NOW()', // tslint:disable-line
   })
   public dateCreate: Date
+
+  @AfterInsert()
+  protected afterSave(): void {
+    console.log('Create user: ', this.email)
+  }
 }
