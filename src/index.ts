@@ -15,6 +15,7 @@ const app = createKoaServer({
   routePrefix: '/api',
   development: IS_DEV,
   controllers: [__dirname + '/controller/*.ts'],
+  middlewares: [__dirname + '/middleware/*.ts'],
 })
 
 app.use(helmet())

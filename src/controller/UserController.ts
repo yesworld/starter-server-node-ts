@@ -1,5 +1,5 @@
-import { BadRequestError, Body, JsonController, Post } from 'routing-controllers'
-import { ConnectionManager, QueryFailedError, Repository } from 'typeorm'
+import { Body, JsonController, Post } from 'routing-controllers'
+import { ConnectionManager, Repository } from 'typeorm'
 import * as bcrypt from 'bcrypt'
 import { sign } from 'jsonwebtoken'
 import { User } from '@/entity/User'
@@ -24,17 +24,10 @@ export class UserController {
     )
 
     let user: User
-    try {
-      user = await this.userRepo.save(rawUser)
-      delete user.password
-    } catch (e) {
-      const err: QueryFailedError = e
-      //todo: logs
-      throw new BadRequestError()
-    }
+    user = await this.userRepo.save(rawUser)
+    delete user.password
 
     const token = sign({...user}, JWT_SECRET, {expiresIn: '24h'})
-
     return {
       user,
       token
