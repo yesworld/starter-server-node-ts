@@ -1,7 +1,7 @@
 {
-  "name": "start-point",
-  "version": "0.0.7",
-  "description": "REST API using Node with typescript, KOA framework. TypeORM for SQL. Middleware JWT, CORS, Winston Logger.",
+  "name": "start-point-koa",
+  "version": "0.0.8",
+  "description": "REST API using Node with typescript, KOA framework with CORS. TypeORM for SQL.",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",

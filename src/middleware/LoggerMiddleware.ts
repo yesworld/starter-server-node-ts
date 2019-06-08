@@ -6,7 +6,7 @@ export class LoggerMiddleware implements KoaMiddlewareInterface {
 
   public async use(
       context: any,
-      next: (error?: any) => Promise<any>
+      next: (error?: any) => Promise<any>,
   ): Promise<any> {
 
     await next()
@@ -14,8 +14,8 @@ export class LoggerMiddleware implements KoaMiddlewareInterface {
     const BODY = context.response.body
     if (context.response.status === 500 && !IS_DEV) {
       context.body = {
-        'message': 'Internal Server Error',
-        'code': 500
+        name: 'InternalServerError',
+        code: 500,
       }
     } else if (context.response.status === 400) {
 
@@ -29,13 +29,18 @@ export class LoggerMiddleware implements KoaMiddlewareInterface {
           errors.push({
             name: validate.property,
             value: validate.value,
-            message: Object.values(validate.constraints).toString()
+            message: Object.values(validate.constraints).toString(),
           })
         })
         BODY.errors = errors
         context.body = BODY
       }
+    } else if (context.response.status === 404 && !BODY) {
+      context.body = {
+        name: 'NotFoundError',
+        code: 404,
+      }
     }
-  }
 
+  }
 }
