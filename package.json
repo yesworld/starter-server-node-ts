@@ -11,7 +11,7 @@
     "sync": "ts-node ./node_modules/.bin/typeorm schema:sync"
   },
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "class-validator": "^0.8.1",
     "dotenv": "^7.0.0",
     "jsonwebtoken": "^8.5.1",
