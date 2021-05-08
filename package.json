@@ -24,7 +24,7 @@
     "reflect-metadata": "^0.1.10",
     "routing-controllers": "^0.7.7",
     "typedi": "^0.8.0",
-    "typeorm": "0.2.15"
+    "typeorm": "0.2.25"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
