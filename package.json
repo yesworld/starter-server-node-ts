@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
-    "class-validator": "^0.8.1",
+    "class-validator": "^0.14.0",
     "dotenv": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
     "kcors": "^2.2.2",
